@@ -50,6 +50,16 @@
             }
         });
       
+       var point_Chino = viewer.entities.add({
+            name:"茅野市", //レイヤ名
+            description:"ここは茅野市です。", //レイヤの説明
+            position:Cesium.Cartesian3.fromDegrees(138.158805, 35.995527, 0), //経度,緯度,高さ
+            point:{
+                pixelSize:10, //ポイントサイズ
+                color:Cesium.Color.RED //ポイントの色
+            }
+        });
+      
         viewer.zoomTo(viewer.entities); //レイヤにズーム
 
     </script>
