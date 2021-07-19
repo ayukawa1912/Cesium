@@ -90,9 +90,13 @@
                 138.200555, 35.938888, 0
               ]), //経度,緯度,高さ
               width:3,
-              material:Cesium.Color.RED
+              material:Cesium.Color.WHITE
             }
         });
+      
+      var Chino_3Dtiles = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+          url:"http://suwarika-miyo.main.jp/ayukawa/Chino_3Dtiles/tileset.json"
+      }));
       
         viewer.zoomTo(viewer.entities); //レイヤにズーム
 
