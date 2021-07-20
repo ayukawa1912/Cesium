@@ -107,6 +107,9 @@
           url:"	http://suwarika-miyo.main.jp/ayukawa/Chino_3Dtiles/tileset.json"
        }));
       
+      var osmBuildingsTileset = Cesium.createOsmBuildings();
+      viewer.scene.primitives.add(osmBuildingsTileset);
+      
         viewer.zoomTo(viewer.entities); //レイヤにズーム
     </script>
   </body>
