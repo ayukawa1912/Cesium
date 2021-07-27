@@ -158,6 +158,13 @@
         })
       );
 
+      var img = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(141.3860555, 43.056222),
+        billboard: {
+          image: "./geosem.PNG",
+        },
+      });
+
       viewer.zoomTo(viewer.entities); //レイヤにズーム
     </script>
   </body>
