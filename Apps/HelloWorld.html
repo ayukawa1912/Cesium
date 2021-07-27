@@ -152,9 +152,13 @@
         },
       });
 
-    viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
       url:"./Chino_3Dtiles/tileset.json"
     }));
+      
+      tileset.style = new Cesium.Cesium3DTileStyle({
+        pointSize: 5
+      })
 
       var img = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(141.3860555, 43.056222),
