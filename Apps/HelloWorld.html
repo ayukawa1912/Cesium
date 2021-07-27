@@ -39,75 +39,126 @@
         sceneModelPicker: false,
         navigationHelpButton: false,
         terrainProvider: Cesium.createWorldTerrain(),
-       });
-      
-// How to use the 3D Tiles Styling language to style individual features, like buildings.
-// Styling language specification: https://github.com/CesiumGS/3d-tiles/tree/master/specification/Styling
+      });
+
+      // How to use the 3D Tiles Styling language to style individual features, like buildings.
+      // Styling language specification: https://github.com/CesiumGS/3d-tiles/tree/master/specification/Styling
       /*var viewer = new Cesium.Viewer("cesiumContainer", {
           terrainProvider: Cesium.createWorldTerrain(),
       });*/
       var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 
-//点と線
-        var point_Fukui = viewer.entities.add({
-            name:"福井市", //レイヤ名
-            description:"ここは福井市です。", //レイヤの説明
-            position:Cesium.Cartesian3.fromDegrees(136.223554, 36.0619, 0), //経度,緯度,高さ
-            point:{
-                pixelSize:10, //ポイントサイズ
-                color:Cesium.Color.BLUE //ポイントの色
-            }
-        });
-      
-       var point_Chino = viewer.entities.add({
-            name:"茅野市", //レイヤ名
-            description:"ここは茅野市です。", //レイヤの説明
-            position:Cesium.Cartesian3.fromDegrees(138.158805, 35.995527, 0), //経度,緯度,高さ
-            point:{
-                pixelSize:10, //ポイントサイズ
-                color:Cesium.Color.YELLOW //ポイントの色
-            }
-        });
-      
+      //点と線
+      var point_Fukui = viewer.entities.add({
+        name: "福井市", //レイヤ名
+        description: "ここは福井市です。", //レイヤの説明
+        position: Cesium.Cartesian3.fromDegrees(136.223554, 36.0619, 0), //経度,緯度,高さ
+        point: {
+          pixelSize: 10, //ポイントサイズ
+          color: Cesium.Color.BLUE, //ポイントの色
+        },
+      });
+
+      var point_Chino = viewer.entities.add({
+        name: "茅野市", //レイヤ名
+        description: "ここは茅野市です。", //レイヤの説明
+        position: Cesium.Cartesian3.fromDegrees(138.158805, 35.995527, 0), //経度,緯度,高さ
+        point: {
+          pixelSize: 10, //ポイントサイズ
+          color: Cesium.Color.YELLOW, //ポイントの色
+        },
+      });
+
       var Line_Chino = viewer.entities.add({
-            name:"茅野市内鉄道", //レイヤ名
-            description:"茅野市内の鉄道", //レイヤの説明
-            polyline:{
-              positions:Cesium.Cartesian3.fromDegreesArrayHeights([138.139166, 36.010555, 0,
-                138.141111, 36.008055, 0,
-                138.144444, 36.003888, 0,
-                138.147777, 35.999722, 0,
-                138.151944, 35.994722, 0, //茅野駅
-                138.152500, 35.993888, 0,
-                138.156388, 35.988333, 0,
-                138.157500, 35.987777, 0,
-                138.159444, 35.986666, 0,
-                138.161944, 35.983888, 0,
-                138.163888, 35.981944, 0,
-                138.166111, 35.980555, 0,
-                138.171388, 35.974444, 0,
-                138.172222, 35.973611, 0,
-                138.173050, 35.970000, 0,
-                138.173611, 35.968888, 0,
-                138.178611, 35.961111, 0,
-                138.179444, 35.960555, 0,
-                138.186044, 35.953333, 0,
-                138.188055, 35.952777, 0,
-                138.189722, 35.950000, 0,
-                138.193611, 35.946944, 0,
-                138.199722, 35.939722, 0,
-                138.200555, 35.938888, 0
-              ]), //経度,緯度,高さ
-              width:3,
-              material:Cesium.Color.RED
-            }
-        });
-      
-      var Chino_3Dtiles = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-          url:"	http://suwarika-miyo.main.jp/ayukawa/Chino_3Dtiles/tileset.json"
-       }));
-      
-        viewer.zoomTo(viewer.entities); //レイヤにズーム
+        name: "茅野市内鉄道", //レイヤ名
+        description: "茅野市内の鉄道", //レイヤの説明
+        polyline: {
+          positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+            138.139166,
+            36.010555,
+            0,
+            138.141111,
+            36.008055,
+            0,
+            138.144444,
+            36.003888,
+            0,
+            138.147777,
+            35.999722,
+            0,
+            138.151944,
+            35.994722,
+            0, //茅野駅
+            138.1525,
+            35.993888,
+            0,
+            138.156388,
+            35.988333,
+            0,
+            138.1575,
+            35.987777,
+            0,
+            138.159444,
+            35.986666,
+            0,
+            138.161944,
+            35.983888,
+            0,
+            138.163888,
+            35.981944,
+            0,
+            138.166111,
+            35.980555,
+            0,
+            138.171388,
+            35.974444,
+            0,
+            138.172222,
+            35.973611,
+            0,
+            138.17305,
+            35.97,
+            0,
+            138.173611,
+            35.968888,
+            0,
+            138.178611,
+            35.961111,
+            0,
+            138.179444,
+            35.960555,
+            0,
+            138.186044,
+            35.953333,
+            0,
+            138.188055,
+            35.952777,
+            0,
+            138.189722,
+            35.95,
+            0,
+            138.193611,
+            35.946944,
+            0,
+            138.199722,
+            35.939722,
+            0,
+            138.200555,
+            35.938888,
+            0,
+          ]), //経度,緯度,高さ
+          width: 3,
+          material: Cesium.Color.RED,
+        },
+      });
+
+      var Chino_3Dtiles = viewer.scene.primitives.add(
+        new Cesium.Cesium3DTileset({
+          url: "chino3ds/tileset.json",
+        })
+      );
+
+      viewer.zoomTo(viewer.entities); //レイヤにズーム
     </script>
   </body>
 </html>
