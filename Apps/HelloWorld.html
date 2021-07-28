@@ -152,6 +152,7 @@
         },
       });
 
+    //3Dtileset_building
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
       url:"./Chino_3Dtiles/tileset.json"
     }));
@@ -159,13 +160,22 @@
       tileset.style = new Cesium.Cesium3DTileStyle({
         pointSize: 5
       });
-
+      
+    //png_test_img
       var img = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(141.3860555, 43.056222),
         billboard: {
           image: "./geosem.PNG",
         },
       });
+      
+     //geojson_road
+      viewer.dataSources.add(Cesium.GeoJsonDataSource.load('./chino-shi_road.geojson', {
+        stroke: Cesium.Color.HOTPINK,
+        fill: Cesium.Color.PINK,
+        strokeWidth: 3,
+        markerSymbol: '?'
+      }));
 
       viewer.zoomTo(viewer.entities); //レイヤにズーム
     </script>
