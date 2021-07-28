@@ -169,12 +169,8 @@
         },
       });
       
-      
-      
      //geojson_road
-      viewer.dataSources.add(Cesium.GeoJsonDataSource.load('./chino-shi_road.geojson', {
-        fill: Cesium.Color.PINK
-      }));
+      viewer.dataSources.add(Cesium.GeoJsonDataSource.load('./chino-shi_road.geojson'));
 
       viewer.zoomTo(viewer.entities); //レイヤにズーム
     </script>
