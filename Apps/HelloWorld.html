@@ -161,18 +161,19 @@
         pointSize: 5
       });
       
-    /*//png_test_img
+    //png_test_img
       var img = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(141.3860555, 43.056222),
         billboard: {
           image: "./geosem.PNG",
         },
-      });*/
+      });
       
       
       
      //geojson_road
       viewer.dataSources.add(Cesium.GeoJsonDataSource.load('./chino-shi_road.geojson', {
+        fill: Cesium.Color.PINK
       }));
 
       viewer.zoomTo(viewer.entities); //レイヤにズーム
